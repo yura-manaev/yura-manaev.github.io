@@ -1,0 +1,177 @@
+/*import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
+import { itemDataThoughts } from './itemData';
+import TelegramComments from 'react-telegram-comments';
+import ChannelPreview from '../components/ChannelPreview';
+import M from '../components/Markdown';
+import Img from '../components/Image';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+const postNumber = itemDataThoughts.find(x => x.key === 'interconnectedness').id;
+
+const title = itemDataThoughts.find(x => x.id === postNumber).title + ' - avrtt.github.io';
+const key = itemDataThoughts.find(x => x.id === postNumber).key;
+const date = itemDataThoughts.find(x => x.id === postNumber).date;
+var banner = require("./img/thoughts/" + key + ".jpg");
+
+const prevImgStyle = {
+	"width": "55%",
+	"clip-path": "inset(25% 0px 30% 0px round 15px)",
+	"transform": "scale(1.8)",
+	"filter": "brightness(70%)"
+}
+
+const prevStyle = {
+	"position": "relative",
+}
+
+const prevTextStyle = {
+	"position": "absolute",
+	"top": "50%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "55px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+const prevDateStyle = {
+	"position": "absolute",
+	"top": "60%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "20px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+export default function Post() {	
+
+	useEffect(() => {
+  		window.scrollTo(0, 0)
+	}, [])
+
+	return (
+		<motion.div 
+			initial={{opacity: 0 }}
+			animate={{opacity: 1 }}
+			exit={{opacity: 0 }}
+			transition={{ duration: 0.15 }}>
+			<Helmet><title>{ title }</title></Helmet>
+			<center><div class='noselect' style={prevStyle}>
+				<img style={prevImgStyle} src={banner} alt="banner" />
+				<b><div style={prevTextStyle}>{itemDataThoughts.find(x => x.id === postNumber).title}</div></b>
+				<div style={prevDateStyle}>{date}</div>
+				<br/>
+			</div></center><div class="postBody">
+
+Фотография деревьев, колышущихся на ветру
+Я всегда ассоциировал дзен с листвой высоких деревьев, колышущиъся на ветру.
+Мне снится шелест листвы
+Вся жизнь — шелест листвы на ветру
+
+Я запомнил множество ярких моментов из двухлетнего возраста.
+Один раз я гулял с мамой по осеннему городу. Это был солнечный день, а листья ещё не успели полностью опасть (shed).
+Вдруг я остановился и посмотрел на густую крону клёна, сквозь редкие щели которого просачивались солнечные лучи.
+Я был поражен (astonished) красотой этой картины настолько, что впредь испытывал состояние сатори всякий раз, когда видел подобную картину.
+
+Теперь, когда я вижу солнечные лучи в кроне деревьев, мои мысли отключаются, а эго исчезает. Мне становится не важно, кто я, где я, чего я хочу.  
+Я чувствую бесконечную радость и восторг от того, что способен созерцать прекрасное, не вызывая никаких мыслей.
+И в последнее время, спустя долгую практику медитации, мне удалось чаще вызывать это состояние. 
+
+Такие моменты не забываются. Именно поэтому вам стоит наслаждаться путешествиями без желания показать это кому-то.
+Так вы начнёте постоянно думать, как и что бы сфотографировать. Постоянно. И эти мысли не позволят вам достичь того состояния, при котором вы навсегда запомните момент. 
+
+
+Всё, что я говорю - хуйня. Всё знание - пусто. Всякое слово - лишнее. Жить - это быть.
+Проблемы - это счастье. Незнание - сила. Знание - тоже сила. Вообще, ничего не характеризуется само по себе. Всё в тебе.
+Ты сам придумаешь себе любую хуйню и будешь в неё верить. И я буду.
+Просто оставайся собой и всем.
+
+
+<M text="# Inconspicuous beaty"/>
+Красота в мелочах
+Дзэн, жизнь в моменте
+В безмолвии ума всё кажется красивым и более не нужно искать ничего сложного. 
+Всё лучшее - уже здесь, перед тобой и в тебе. Просто ты долгое время этого не понимал, так как непрерывно думал о своих проблемах.
+
+<M text="# Don't try"/>
+Даосизм, Wu wei, не-действие
+Со временем начинаешь действовать спонтанно. Действовать, не думая. Но при этом действовать совершенно осознанно, в соответствии с внутренним состоянием. Будто бы на взвешивание решений теперь не требуется время.
+Effortless action is the subtle art of stopping the struggle with one's ego. It originated in Confucianism and is referred to in Chinese tradition as Wu wei (https://en.wikipedia.org/wiki/Wu_wei). 
+Adopting this concept, Taoism would later states: "There is too much action in the world. Stop resisting the law of nature, and you will find harmony". 
+The nature of things is thusness. Every phenomenon in its original form is already complete, full-fledged. Man has always sought to curb nature, to exalt himself. He always sees himself as something incomplete, something in the process of realization.
+But if you do without striving, life itself will build the best version of you.
+
+<M text="# All-acceptance"/>
+Чтобы познать природу Будды, придется научиться принимать всякое явление, мысль и эмоцию.
+Сострадание, вселенская любовь, растворение эго
+Чем больше ты принимаешь, тем более очаровательной становится жизнь.
+
+
+<M text="# Tathātā"/>
+https://en.wikipedia.org/wiki/Tath%C4%81t%C4%81
+Природа вещей, дзадзэн и моно но аварэ
+Всё, что вас задевает и тревожит в этом мире - это дар, позволяющий увидеть себя настоящего. 
+Ваша настоящая реакция на оскорбление - то, кем вы являетесь. 
+Если вы научите себя обращать внимание на свои реакции, то станете благодарны всему в мире.
+Когда не думаешь — время останавливается. Оно больше не нужно. Нет больше страха, нет смерти. Тот, кто остановит своё время — забудет, что такое смерть. Без ожидания конца мы способны жить вечно. Но в мыслях бежим, и убиваем себя с каждым мгновением, которое было упущено умом ради этого тумана.
+
+
+Our disappearance will be a sigh of relief for the rest of the beings on this planet
+Meaningful lights through a meaningless moment
+And at the end there was a peaceful silence.
+
+
+Порой я вижу всю жизнь, всю свою суть в простом колыхании листьев или травы. Жить, наверное, — это чувствовать эфемерность момента и лёгкую грусть из-за этого, при этом оставаясь счастливым. Это видеть себя в отражении всякого явления, когда всё перестаёт иметь характеристики, когда всё такое, какое оно есть
+Например, когда кто-то сделает мне что-то плохое — я пойму, как моё эго способно отреагировать на подобное. Я учусь на каждом явлении, потому что вижу в них отражение своих переживаний. И если в первый раз я бы проявил ответную агрессию в такой ситуации, то во второй раз, в подобной ситуации, я бы поблагодарил человека, ведь он буквально был создан моими мыслями лишь для того, чтобы я увидел свою очередную негативную эмоцию
+Когда учишься благодарить, постепенно приходит это светлое чувство безмятежности. Тебе уже не хочется отвечать оскорблением на оскорбление. Вместо этого ты просто улыбаешься в ответ и ни капли не тревожишься. В этом любовь
+В благодарности начинаешь понимать, что нет в мире ничего, что следовало бы не любить. Всё — испытание для эго, для воли. Даже к самому ужастному человеку начинаешь чувствовать жалость, нежели ненависть. Ведь он ужасен не потому что таким родился. А потому что глубоко несчастен. Он может убивать других, может быть диктатором, худшим из худших. Но он тоже был создан ради того, чтобы мы увидели свои эмоции, себя настоящих
+Проявлять любую эмоцию естественно, но со временем, если долго слушать себя, все негативные эмоции перестают быть частью тебя
+
+//<Img src="https://i.imgur.com/ea49SBu.png" w="30%"/>
+
+<M text="# Не более, чем наблюдатель" />
+
+<M text="Фотографии в переписках Телеграма и Vault, посты в канале" />				
+		
+
+О знании
+
+Незнание — это дар, привносящий в жизнь счастье быть исследователем и учителем. Дар этот столько же беграничен, сколько и любовь.
+А мир ведь на самом деле до смеха просто устроен. Мы сами выбираем, когда и в чём ему быть сложным, лишь чтобы развлечь себя. Понимание мира во всей его простоте приходит с осознанием, что мы себя постоянно обманываем иллюзией понимания. И знание помножает скорбь лишь тогда, когда мы обманываемся этой иллюзией. Не важно, живёт ли человек в неведении или стремится к знанию. Счастлив он будет тогда, когда перестанет себя обманывать.
+
+Мы пылинки космоса, обычный налёт, наши амбиции - лишь игра
+
+"Мы живые" (фото природы)
+Наши отражения (фото из середины толпы)
+Everyone is going somewhere, for some reason. (фото людей в городе)
+Все спешат, а мы плывём
+Каждый момент — это новое начало
+Никто нас так не любит, как солнце (фото солнца)
+			
+<M text="За окном война и мор, но мы продолжим сидеть дзадзэн. Только так мы спасём этот мир. "/>
+
+<M text="# Siberian Zen " />
+                      
+<M text="In the silence of the mind, even the smell of the air is remembered. Just observe. Breathe. Live the life. You don't have to do anything special to be happy."/>
+
+<M text="Everything goes on and doesn't depend on me. I'm only a part of this ongoing eternal, beatiful and primordial everything. I am everything, but only when I get rid of myself."/>
+
+Шопенгауэр писал, что ко всем идеям следует приходить своим умом
+
+<M text="Love, forgive, have compassion. This is how you'll save the world."/>
+<M text="See you."/>
+			
+			<AnimationOnScroll offset="300" duration="1.2" animateIn="animate__fadeIn" animateOnce="true"><div class="iframeWrapper"><iframe class="iframe" src="https://www.youtube.com/embed/KvloaZtzko8" title="video"></iframe></div></AnimationOnScroll>
+			</div><div class='chatWrapper'><TelegramComments websiteKey={'2JA7Wo3q'} customColor='000000' commentsNumber={5} pageId={key} showDislikes={true} /></div>
+			<ChannelPreview />
+		</motion.div>
+	);
+};
+*/  

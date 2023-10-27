@@ -1,0 +1,168 @@
+/*import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
+import { itemDataThoughts } from './itemData';
+import TelegramComments from 'react-telegram-comments';
+import ChannelPreview from '../components/ChannelPreview';
+import M from '../components/Markdown';
+import Img from '../components/Image';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+const postNumber = itemDataThoughts.find(x => x.key === 'how_to_live_a_crazy_life').id;
+
+const title = itemDataThoughts.find(x => x.id === postNumber).title + ' - vladaverett.github.io';
+const key = itemDataThoughts.find(x => x.id === postNumber).key;
+const date = itemDataThoughts.find(x => x.id === postNumber).date;
+var banner = require("./img/thoughts/" + key + ".jpg");
+
+const prevImgStyle = {
+	"width": "55%",
+	"clip-path": "inset(25% 0px 30% 0px round 15px)",
+	"transform": "scale(1.8)",
+	"filter": "brightness(70%)"
+}
+
+const prevStyle = {
+	"position": "relative",
+}
+
+const prevTextStyle = {
+	"position": "absolute",
+	"top": "50%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "55px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+const prevDateStyle = {
+	"position": "absolute",
+	"top": "60%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "20px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+export default function Post() {	
+
+	useEffect(() => {
+  		window.scrollTo(0, 0)
+	}, [])
+
+	return (
+		<motion.div 
+			initial={{opacity: 0 }}
+			animate={{opacity: 1 }}
+			exit={{opacity: 0 }}
+			transition={{ duration: 0.15 }}>
+			<Helmet><title>{ title }</title></Helmet>
+			<center><div class='noselect' style={prevStyle}>
+				<img style={prevImgStyle} src={banner} alt="banner" />
+				<b><div style={prevTextStyle}>{itemDataThoughts.find(x => x.id === postNumber).title}</div></b>
+				<div style={prevDateStyle}>{date}</div>
+				<br/>
+			</div></center><div class="postBody">
+
+
+Введение
+
+<M text="# Look ma, no head!" />
+Мысли как панк, проникнись духом молодости, риска и рок-н-ролла. И не важно, сколько тебе лет. У тебя нет возраста. 
+Тебе не нужен план. Будь спонтанным. Захотел проехать мир на мотоцикле? Покупай незамедлительно. Нет денег? Поезжай автостопом, превратись в бомжа, подрабатывай в дороге.
+
+Пусть деньги потеряют для тебя ценность. Перестань продавать свою жизнь.
+
+Осознай, что ты умрешь так же, как и любой богатый человек. На смертном одре все равны. 
+
+Показать Игги Попа, привести в пример Хантера Томпсона
+Этот дед до сих пор безумный подросток! Ему почти 80 лет!
+Фотографии рок-музыкантов, настоящих панков
+
+<M text="# Too weird to live, and too rare to die" />
+https://www.google.com/search?q=how+to+live+the+crazy+life&bih=864&biw=1745&hl=en&ei=aPznY9GXJeL6qwGY-regCg&ved=0ahUKEwjR68yZqY79AhVi_SoKHRj9DaQQ4dUDCA8&uact=5&oq=how+to+live+the+crazy+life&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIGCAAQCBAeMgUIABCGAzIFCAAQhgMyBQgAEIYDMgUIABCGAzoKCAAQRxDWBBCwAzoICAAQCBAHEB46CQgAEB4QDRDxBDoICAAQCBAeEA1KBAhBGABKBAhGGABQhwNYvAVg8gZoAXABeACAAXOIAbYDkgEDMS4zmAEAoAEByAEFwAEB&sclient=gws-wiz-serp
+https://artifex.ru/%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0/%D1%85%D0%B0%D0%BD%D1%82%D0%B5%D1%80-%D1%82%D0%BE%D0%BC%D0%BF%D1%81%D0%BE%D0%BD/
+
+The whole world is before you. What will you do?
+Начинай с маленьких безумств.
+
+
+Fall in love with this goddamn universe.
+
+Улыбайся всегда, смейся над этой жизнью
+
+Делай что хочешь и никого не слушай
+
+Наслаждайся каждой мелочью, больше у тебя такой возможности не будет!
+
+
+<M text="# Be primitive" />
+
+Тебе не нужно ничего, чтобы жить полной жизнью. Забей на все эти вещи, роскошь, социальные нормы. Зачем тебе много вещей, если у тебя одно тело?
+
+Радоваться нужно мелочам
+
+Проникайся примитивным искусством.
+
+(лицо Фенрица из того интервью)
+
+
+<M text="# Test the world out"/>
+Любопытство — это постоянно проверять свой мир на прочность, делать невообразимые вещи и удивляться каждому явлению. 
+В детстве я залезал на деревья, танцевал в толпе людей, кидал камни в машины. Потому что мне было интересно, что произойдет... И со временем ограждался рамками общества. Но только сейчас понял, что люди вокруг созданы для того, чтобы смеяться надо мной. Потому что они — это я.
+
+Как сохранить в себе ребенка и детское любопытство
+
+GG Allin, Iggy Pop
+
+<M text="# Move "/>
+The sweet freedom
+Не стой на месте, коль скоро ты живёшь налегке. Для тебя не составит труда каждую неделю менять своё место жительства.
+
+
+
+
+<M text="# Create"/>
+
+
+В мире есть две главных радости: созерцание и созидание.
+
+
+
+
+
+
+<M text="# Find your buddies"/>
+
+Про хиппи, панков, путешественников
+Помни, что люди сами будут притягиваться к тебе, если ты открыт. Просто показывай себя настоящего и делай то, что хочешь.
+
+
+<M text="# Alternating fast and slow life"/>
+Важно научиться быть безумным, но не брать на себя слишком неоправданные риски. Жизнь - это твоя главная ценность. Научись успокаивать себя и вовремя нажимать на тормоза. 
+
+Как по мне, лучший вариант - это чередование чилла и безумия. Останавливайся, отдыхай, бездельничай, а потом снова отправляйся в опасный путь. Иначе либо выгоришь от такого стиля жизни, либо зайдешь слишком далеко в своём безумии. 
+
+Жизнь кажется длинной, если не спешить
+
+The universe is singing to you
+
+
+
+
+	
+<M text="Сильный дождь за окном. Я пойду сейчас гулять один, промокну, сяду на асфальт, буду смотреть на небо и смеяться. Потому что я свободен. Потому что я счастлив. У меня есть всё."/>
+
+			<AnimationOnScroll offset="300" duration="1.2" animateIn="animate__fadeIn" animateOnce="true"><div class="iframeWrapper"><iframe class="iframe" src="https://www.youtube.com/embed/LVXd7Wc1xBA" title="video"></iframe></div></AnimationOnScroll>
+			</div><div class='chatWrapper'><TelegramComments websiteKey={'2JA7Wo3q'} customColor='000000' commentsNumber={5} pageId={key} showDislikes={true} /></div>
+			<ChannelPreview />
+		</motion.div>
+	);
+};
+*/

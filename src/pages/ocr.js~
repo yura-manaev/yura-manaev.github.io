@@ -1,0 +1,81 @@
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
+import { itemDataLearning } from './itemData';
+import TelegramComments from 'react-telegram-comments';
+import ChannelPreviewLearning from '../components/ChannelPreviewLearning';
+import M from '../components/Markdown';
+import L from '../components/Latex';
+import Img from '../components/Image';
+
+const postNumber = itemDataLearning.find(x => x.key === 'ocr').id;
+
+const title = itemDataLearning.find(x => x.id === postNumber).title + ' - vladaverett.github.io';
+const key = itemDataLearning.find(x => x.id === postNumber).key;
+const date = itemDataLearning.find(x => x.id === postNumber).date;
+var banner = require("./img/learning/" + key + ".jpg");
+
+const prevImgStyle = {
+	"width": "55%",
+	"clip-path": "inset(25% 0px 30% 0px round 15px)",
+	"transform": "scale(1.8)",
+	"filter": "brightness(70%)"
+}
+
+const prevStyle = {
+	"position": "relative",
+}
+
+const prevTextStyle = {
+	"position": "absolute",
+	"top": "50%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "55px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+const prevDateStyle = {
+	"position": "absolute",
+	"top": "60%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "20px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+export default function Post() {  	
+
+	useEffect(() => {
+  		window.scrollTo(0, 0)
+	}, [])
+
+	return (
+		<motion.div 
+			initial={{opacity: 0 }}
+			animate={{opacity: 1 }}
+			exit={{opacity: 0 }}
+			transition={{ duration: 0.15 }}>
+			<Helmet><title>{ title }</title></Helmet>
+			<center><div class='noselect' style={prevStyle}>
+				<img style={prevImgStyle} src={banner} alt="banner" />
+				<b><div style={prevTextStyle}>{itemDataLearning.find(x => x.id === postNumber).title}</div></b>
+				<div style={prevDateStyle}>{date}</div>
+				<br/>
+			</div></center><div class="postBody">
+				
+					
+https://www.notion.so/Optical-character-recognition-832302b2f1ee47a09efd60caa99ae777											
+							
+							
+			</div><div class='chatWrapper'><TelegramComments websiteKey={'2JA7Wo3q'} customColor='000000' commentsNumber={5} pageId={key} showDislikes={true} /></div>
+			<ChannelPreviewLearning />
+		</motion.div>
+	);
+};

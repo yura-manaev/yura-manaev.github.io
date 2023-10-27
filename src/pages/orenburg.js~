@@ -1,0 +1,128 @@
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
+import { itemDataAdventures } from './itemData';
+import TelegramComments from 'react-telegram-comments';
+import ChannelPreview from '../components/ChannelPreview';
+import M from '../components/Markdown';
+import Img from '../components/Image';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+const postNumber = itemDataAdventures.find(x => x.key === 'orenburg').id;
+
+const title = itemDataAdventures.find(x => x.id === postNumber).title + ' - avrtt.github.io';
+const key = itemDataAdventures.find(x => x.id === postNumber).key;
+const date = itemDataAdventures.find(x => x.id === postNumber).date;
+var banner = require("./img/adventures/" + key + ".jpg");
+
+const prevImgStyle = {
+	"width": "55%",
+	"clip-path": "inset(25% 0px 30% 0px round 15px)",
+	"transform": "scale(1.8)",
+	"filter": "brightness(70%)"
+}
+
+const prevStyle = {
+	"position": "relative",
+}
+
+const prevTextStyle = {
+	"position": "absolute",
+	"top": "50%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "55px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+const prevDateStyle = {
+	"position": "absolute",
+	"top": "60%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "20px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+export default function Post() {	
+
+	useEffect(() => {
+  		window.scrollTo(0, 0)
+	}, [])
+
+	return (
+		<motion.div 
+			initial={{opacity: 0 }}
+			animate={{opacity: 1 }}
+			exit={{opacity: 0 }}
+			transition={{ duration: 0.15 }}>
+			<Helmet><title>{ title }</title></Helmet>
+			<center><div class='noselect' style={prevStyle}>
+				<img style={prevImgStyle} src={banner} alt="banner" />
+				<b><div style={prevTextStyle}>{itemDataAdventures.find(x => x.id === postNumber).title}</div></b>
+				<div style={prevDateStyle}>{date}</div>
+				<br/>
+			</div></center><div class="postBody">
+
+<M text="Good to see you."/>
+
+<M text="For several years, I've felt like some kind of observer who wanders aimlessly around the world, storing moments in memory for someone... Don’t know for whom."/>
+<M text="Often my actions are the result of a child's curiosity, which I have managed to maintain. And as befits a child, this world responds with a smile."/>
+
+
+<M text="# Text " />
+		
+Видео с прогулок, Hardcore Condor, всё с Кондором, все фото из Оренбурга						
+								
+<M text="Фотографии в переписках Телеграма и Vault, музыка" />										
+							
+Сейчас я снова в Оренбурге
+Выезжаю автостопом 21-23 июля в Минводы, где встречусь с Улей и Марьяной. Вместе мы поедем в Тбилиси через Верхний Ларс.
+Про прогулку с Кондором, электросамокаты ночью, летучую мышь, про Кондора, ностальгические дворы
+Сейчас здесь уже всё другое. Многое поменялось в моей жизни, в мире, в России.							
+					
+//<Img src="https://lh3.googleusercontent.com/drive-viewer/AITFw-zsVuwFlruwiKt6deW4ADfICdEPR8ErOJhnlhFIT_AUbNcBjmownSk3YXtSmxtA-G7u7w6gyHDcwP21mwkUsqYXCbYT1w=s1600" w="80%" />
+<M text="С шестой струной случился блэк-метал."/>					
+//<Img src="https://lh3.googleusercontent.com/drive-viewer/AITFw-zqCZUyKDckIIQw4otWKM6c63Xj-bonerb0nEFOgJRFuKtmamTLBWqmfEgVac-JXEsfIIZPDMbw2ylj88dptoIzKl_iyQ=s1600" w="50%" />			
+					
+С доброй ностальгией вспоминаю сейчас места в Оренбурге, которые у нас с другом ассоциировались с Грецией. Там растут высокие вытянутые тополи, напоминающие кипарисы. Надеюсь, и по Греции мы с ним однажды погуляем.
+
+
+Расскажу, как доехал.					
+							
+Забрал диплом 3 июля и сразу же поехал на вокзал. Не пожалел, что поехал на поезде, проникся всей душевностью российского плацкарта. Антураж и многообразие архетипов чем-то напоминали видео birchpunk (https://www.youtube.com/watch?v=t7kr7utvVEs): дембель с гитарой, орущая на всех проводница, храпящие толстячки, ночные жруны, торчащие с верхних полок руки. Добавьте к этому бегающих детей, любителей поиграть в карты под семечки "Джинн", купе казахских металхэдов, запах Доширака, ворчащих бабушек и пограничников, которые ловили нелегалов на казахской границе. Вагон сам по себе был идеальным.
+
+Ночью в Орске подсел ко мне мужчина лет 60 с племянником. Познакомились, выяснилось, что они сели на первый попавшийся поезд, чтобы купить в другом городе машину. Сказали, пока в Оренбург едут, а потом посмотрят. Обратно — на новой машине.
+
+Проводница посмотрела их документы, выдала постельные комплекты и ушла к себе. Тут же мужчина, который представился как Серёга, вытаскивает из-под стола три двухлитровых бутылки пива и бутылку водки, а затем угощает меня шашлыком. Вдвоём они выпили всё пиво за час.
+
+Племянник быстро уснул, а вот Серёга начал делиться со мной житейской мудростью. Из разговора я узнал, как правильно мариновать арбуз, на что ловить сома, как живут семьи Макрона и Байдена, как укладывать асфальт, работать на грейдере, как жилось при коммунизме и какая пенсия у дальнобойщика со стажем 20 лет. Потом посмотрел все его фотоальбомы с рыбалок, показал свои фотографии из путешествий, добавил в WhatsApp и скинул три фотографии с Алтая, так как он хотел их распечатать.
+
+После бутылки водки он начал рассказывать, где расположено стратегическое вооружение РФ, откуда в Украине нацисты, где настоящие границы России, про историю Чехословакии и что во всём виноваты американцы. Спорить с Серёгой я не стал: слушать всё это было чистым наслаждением после интеллектуальной университетсткой среды.
+
+Все в вагоне уже спали, а я настолько влился в это общение в духе пьяного бати, что даже без алкоголя чувствовал себя максимально раскованным.
+
+В переписке с Кондором про Серёгу
+Скинул на вотсап фотографии с Алтая
+Скрин в канал (см. галерею)
+
+А вообще, я понял, что мне нравится узнавать о жизни других людей и о чём они думают.							
+			
+							
+							
+<M text="Peace."/>							
+							
+							
+			<AnimationOnScroll offset="300" duration="1.2" animateIn="animate__fadeIn" animateOnce="true"><div class="iframeWrapper"><iframe class="iframe" src="https://www.youtube.com/embed/WqOlHt--fOI" title="video"></iframe></div></AnimationOnScroll>
+			</div><div class='chatWrapper'><TelegramComments websiteKey={'2JA7Wo3q'} customColor='000000' commentsNumber={5} pageId={key} showDislikes={true} /></div>
+			<ChannelPreview />
+		</motion.div>
+	);
+};
+  

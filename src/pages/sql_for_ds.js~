@@ -1,0 +1,88 @@
+/*import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
+import { itemDataLearning } from './itemData';
+import TelegramComments from 'react-telegram-comments';
+import ChannelPreviewLearning from '../components/ChannelPreviewLearning';
+import M from '../components/Markdown';
+import L from '../components/Latex';
+import Img from '../components/Image';
+
+const postNumber = itemDataLearning.find(x => x.key === 'sql_for_ds').id;
+
+const title = itemDataLearning.find(x => x.id === postNumber).title + ' - avrtt.github.io';
+const key = itemDataLearning.find(x => x.id === postNumber).key;
+const date = itemDataLearning.find(x => x.id === postNumber).date;
+var banner = require("./img/learning/" + key + ".jpg");
+
+const prevImgStyle = {
+	"width": "55%",
+	"clip-path": "inset(25% 0px 30% 0px round 15px)",
+	"transform": "scale(1.8)",
+	"filter": "brightness(70%)"
+}
+
+const prevStyle = {
+	"position": "relative",
+}
+
+const prevTextStyle = {
+	"position": "absolute",
+	"top": "50%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "55px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+const prevDateStyle = {
+	"position": "absolute",
+	"top": "60%",
+	"left": "50%", "width": "100%",
+	"transform": "translate(-50%, -70%)",
+	"margin": "0",
+	"padding": "0",
+	"color": "#f2f2f2",
+	"font-size": "20px",
+	"font-family": "'Quicksand', sand-serif"
+}
+
+export default function Post() {  	
+
+	useEffect(() => {
+  		window.scrollTo(0, 0)
+	}, [])
+	
+	return (
+		<motion.div 
+			initial={{opacity: 0 }}
+			animate={{opacity: 1 }}
+			exit={{opacity: 0 }}
+			transition={{ duration: 0.15 }}>
+			<Helmet><title>{ title }</title></Helmet>
+			<center><div class='noselect' style={prevStyle}>
+				<img style={prevImgStyle} src={banner} alt="banner" />
+				<b><div style={prevTextStyle}>{itemDataLearning.find(x => x.id === postNumber).title}</div></b>
+				<div style={prevDateStyle}>{date}</div>
+				<br/>
+			</div></center><div class="postBody">
+				
+					
+<M text="# This is Markdown " />
+<L text="This is LaTeX: $e^+e^-$ $\\gamma$" />
+<L text="\[ \lambda_(X^T X) / \lambda(X^T X) = 8.920608e+04\]" />
+Modal images:
+https://lh4.googleusercontent.com/gXe2uhATd6_vzw8xXKcliBolY0f4PkRJYTsvLJjMSBlTFKKDr5HcB-QhP5PX2qCM8is=w2400" w="100%" />
+https://lh6.googleusercontent.com/b53GvmRR2JAICTDv0kY6P4njD9cEwWHx-XjLt6nXrQeq7S00_SvV3s8pNqampKECiiA=w2400" w="100%" />
+											
+							
+							
+			</div><div class='chatWrapper'><TelegramComments websiteKey={'2JA7Wo3q'} customColor='000000' commentsNumber={5} pageId={key} showDislikes={true} /></div>
+			<ChannelPreviewLearning />
+		</motion.div>
+	);
+};
+  */
