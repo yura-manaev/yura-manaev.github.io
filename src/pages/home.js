@@ -33,11 +33,16 @@ const Home = () => {
       </Helmet>
  	  
 		<M text="Manaev Iurii tattoo artist and professional photographer"/>
+		<br/>
+		<M text="### GEORGIA THROUGH MY EYES"/>
 		<Img s={img('DSC_0438')} w={"100%"}/>
 		<Img s={img('DSC_0625')} w={"100%"}/>
 		<Img s={img('DSC_0436')} w={"100%"}/>
 		<Img s={img('DVV_1192')} w={"100%"}/>
 		<Img s={img('DVV_0456')} w={"100%"}/>
+		<center>
+			<M text="inst: [@yura_ne_doma](https://www.instagram.com/yura_ne_doma?igshid=OGY3MTU3OGY1Mw%3D%3D)"/>
+		</center>
 		
    </motion.div>
 	);
