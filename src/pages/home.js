@@ -4,8 +4,16 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import M from '../components/Markdown';
+import Img from '../components/Image';
+
+var imgPath = './img/';
 
 const TITLE = 'yura-manaev.github.io'
+
+function img(imgName) {
+	var path = require(imgPath + imgName + '.jpg')
+	return path
+}
 
 const Home = () => {
 	
@@ -24,7 +32,12 @@ const Home = () => {
 			<title>{ TITLE }</title>
       </Helmet>
  	  
-		Я еблан	
+		<M text="Manaev Iurii tattoo artist and professional photographer"/>
+		<Img s={img('DSC_0438')} w={"100%"}/>
+		<Img s={img('DSC_0625')} w={"100%"}/>
+		<Img s={img('DSC_0436')} w={"100%"}/>
+		<Img s={img('DVV_1192')} w={"100%"}/>
+		<Img s={img('DVV_0456')} w={"100%"}/>
 		
    </motion.div>
 	);
